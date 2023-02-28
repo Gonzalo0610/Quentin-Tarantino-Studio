@@ -1,0 +1,56 @@
+Place,sentiment
+int. garage,-0.6522
+int. Butch's apartment,-0.5574
+ext. Sally LeRoy's,-0.5423
+int. Jackrabbit Slim's (ladies room),-0.5255
+ext. Lance's house,-0.35860000000000003
+int. reception area (apartment building),-0.33318000000000003
+int. Jimmie's kitchen,-0.33260625
+ext. alley (raining),-0.27294999999999997
+int. taxi (parked / raining),-0.20903333333333332
+int. Lance's house,-0.18295384615384616
+int. cab (moving / raining),-0.168375
+int. elevator,-0.15694444444444444
+int. Marsellus Wallace's home,-0.15674
+int. Vincent's malibu (moving),-0.1383375
+int. locker room,-0.12386666666666667
+ext. motel room,-0.08359615384615385
+int. bathroom,-0.07044
+int. hotel suite,-0.05433333333333334
+int. Marsellus' house / living room,-0.0497
+int. Willis locker room (auditorium),-0.04873333333333333
+ext. Jackrabbit Slim's,-0.040279999999999996
+ext. front of Marsellus Wallace's house,-0.035168181818181814
+int. Lance's bedroom,-0.033973913043478264
+int. Chevy (trunk),-0.0301375
+int. pawnshop back room,-0.026300000000000007
+int. Russell's old room,-0.024285714285714275
+int. Nova (moving),-0.022508163265306122
+int. Jimmie's house,-0.021738461538461543
+int. Lance's house (kitchen),-0.020599999999999997
+int. Honda,-0.006190000000000006
+int. Marsellus' house / dressing room,0.0
+ext. Marsellus Wallace's house,0.0
+int. Jackrabbit Slim's (dining area),0.01350689655172414
+int. apartment building hallway,0.019950000000000002
+int. spare room,0.022607142857142857
+int. Jackrabbit Slim's,0.029696969696969697
+int. coffee shop,0.03085706806282723
+int. '74 Chevy (moving),0.032940000000000004
+int. Sally LeRoy's,0.035852380952380955
+int. Mason-Dixie pawnshop,0.03621
+int. Jimmie's bedroom,0.04137058823529412
+int. apartment (room 49),0.04618395061728395
+living room,0.07525200000000001
+ext. Jimmie's backyard,0.07610000000000001
+ext. motel (stopped / raining),0.09856666666666665
+ext. apartment building courtyard,0.10494166666666667
+int. motel (room six),0.1057251655629139
+ext. Monster Joe's Truck and Tow,0.159985
+int. Jimmie's garage,0.24618823529411765
+int. Chevy Nova,0.32006666666666667
+int. Honda (moving),0.3252
+int. kitchen,0.49816363636363636
+int. bathroom (Marsellus Wallace's house),0.5449666666666667
+int. Marsellus Wallace's dining room,0.6189
+ext. phone booth (raining),0.8499
