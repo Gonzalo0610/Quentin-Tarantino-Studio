@@ -4,7 +4,9 @@ QUENTIN TARANTINO ANALYSIS
 
 I decided to base my project in one of my favorite directors, Quentin Tarantino. For that, I explored some datasets and webs to find all the information needeed to complete my studio. I set it into 3 diferent analysis: A script sentiment analysis, some general data/information about the director and his movies and finally a regression model to try to estimate the keys of success of his movies. 
 
-Tableau link: https://public.tableau.com/app/profile/gonzalo.quesada/viz/Tarantino_16775583352980/Story1?publish=yes
+ALERT: I used Tableau for all my visualizations of my first part of the project, you can find them in this link: https://public.tableau.com/app/profile/gonzalo.quesada/viz/Tarantino_16775583352980/Story1?publish=yes
+
+<div class='tableauPlaceholder' id='viz1682091885901' style='position: relative'><noscript><a href='#'><img alt='Tarantino Analysis ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ta&#47;Tarantino_16775583352980&#47;Story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='views&#47;Tarantino_16775583352980&#47;Story1?:language=en-US&amp;:embed=true&amp;publish=yes' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ta&#47;Tarantino_16775583352980&#47;Story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1682091885901');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 
 1. Script reading and Sentiment Analysis (CSV and Visualization)
     
@@ -15,9 +17,11 @@ I decided (and luckly found) the script of his opera magna: Pulp Fiction. In the
 
 First of all, there are some recurrent points of Tarantino, such as the selection of the music, the angle of the camera or the easter eggs and references from other movies. As normally this tools are visual and not reflected in the script, I wanted to know if it is any way of finding out if the script is also full of QT references. I decided to take two of the most typical to make a quick regex analysis: 
 
+![feet](./Images/feet.jpeg)
+
 THE FEET: Tarantino has a fetish, it is not a big secret. I decided to use regex to find how many times the word feet, foot, shoes, socks... were used on the film, which argument has no correlation with the pedestrian nor podology world. The final count was 24, so we can conclude that not only as an image, but the feet fetish is present also in the script. It is kind of savage, as doing an nltk, as the word most repeated word in the film is only used 91 times. Of course, it is "fuckin". 
 
-![feet](./Images/feet.jpeg)
+![Pulp Fiction](./pulp_fiction_wordcloud.png)
 
 
 THE BRAND: It is well known that Tarantino does not like Brand Placement in his movies, that is why he decided to invent some of his own. In all his films, the cigarrete brand "Red Apple" is present in practically every scene, and in this particular film the most iconic scene includes the fictional brand "Big Kahuna Burger". I try the same analysis as the director's fetish, with disappointing results: both fictional brands were only said twice in the whole movie, in one scene each. So the Fictional Brand Placement does not affect the script, is just presented casually in the scene. 
@@ -68,32 +72,35 @@ Lastly, I tried to do the lineal regression Model of the last film that Tarantin
 So then, I decided to make a twist: instead of trying to guess the rating of the next movie, I want to try to make a regression with the endogenous variable being the total revenue (not taken into account in the last process). It seems more plausible with exogenous variables such as the rating and the original budget to try to regress the revenue. And it work (sort of). The final combiantion acceptable with an alpha of 1 was to take the exogenous variables: Budget, the presence of Tim Roth in the film, the presence of Michael Madsen, the nominations of the film to the combination of Oscars, Golden Globes and BAFTAs and the IMDB Rating of the film. In this model, and with an alpha of 0.1 (accepting octopus as a pet), the only exogenous variable with higher p-value is by little the Michael Madsen presence: the most relevant one, both by coefficient and t, is the budget, and the most negative impact on the revenue is the presence of Tim Roth. i don't know why, he is a hell of an actor. 
 
 
-
-
                      OLS Regression Results                            
-==============================================================================
-Dep. Variable:                      y   R-squared:                       0.972
-Model:                            OLS   Adj. R-squared:                  0.938
-Method:                 Least Squares   F-statistic:                     28.19
-Date:                Tue, 28 Feb 2023   Prob (F-statistic):            0.00324
-Time:                        03:10:39   Log-Likelihood:                -183.65
-No. Observations:                  10   AIC:                             379.3
-Df Residuals:                       4   BIC:                             381.1
-Df Model:                           5                                         
-Covariance Type:            nonrobust                                         
-==============================================================================
-                 coef    std err          t      P>|t|      [0.025      0.975]
-------------------------------------------------------------------------------
-const      -6.574e+08   2.92e+08     -2.254      0.087   -1.47e+09    1.52e+08
-x1             2.0109      0.597      3.371      0.028       0.355       3.667
-x2         -1.117e+08   3.66e+07     -3.050      0.038   -2.13e+08      -1e+07
-x3          6.629e+07   3.24e+07      2.045      0.110   -2.37e+07    1.56e+08
-x4          2.512e+07   8.42e+06      2.984      0.041    1.74e+06    4.85e+07
-x5          9.484e+07   3.96e+07      2.398      0.075    -1.5e+07    2.05e+08
-==============================================================================
-Omnibus:                        1.659   Durbin-Watson:                   2.321
-Prob(Omnibus):                  0.436   Jarque-Bera (JB):                1.046
-Skew:                          -0.731   Prob(JB):                        0.593
-Kurtosis:                       2.391   Cond. No.                     1.32e+09
 
 
+Dep. Variable: Total Revenue
+
+R-squared: 0.972
+
+Model: OLS   
+
+Adj. R-squared: 0.938
+
+Method: Least Squares   
+
+F-statistic: 28.19
+
+Prob (F-statistic):    0.00324
+
+No. Observations: 10
+
+Df Residuals: 4
+
+Df Model: 5
+
+
+|             | coef        | std err     | t         | P > \|t\|   | [0.025    | 0.975]    |
+|-------------|-------------|-------------|-----------|-------------|-----------|-----------|
+| const       | -6.574e+08  | 2.92e+08    | -2.254    | 0.087       | -1.47e+09 | 1.52e+08  |
+| Budget          | 2.0109      | 0.597       | 3.371     | 0.028       | 0.355     | 3.667     |
+| Tim Roth | -1.117e+08 | 3.66e+07    | -3.050    | 0.038       | -2.13e+08 | -1e+07    |
+| Michael Mardsen         | 6.629e+07   | 3.24e+07    | 2.045     | 0.110       | -2.37e+07 | 1.56e+08  |
+| Award Nominations          | 2.512e+07   | 8.42e+06    | 2.984     | 0.041       | 1.74e+06  | 4.85e+07  |
+| IMDB Rating          | 9.484e+07   | 3.96e+07    | 2.398     | 0.075       | -1.5e+07  | 2.05e+08  |
